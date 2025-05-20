@@ -26,4 +26,26 @@ def get_job_recommendation(mbti_type):
 
 # 스트림릿 앱 인터페이스 만들기
 def main():
-    st.title("🔮 MBTI에 맞는 직업 추천 웹앱 🎉
+    st.title("🔮 MBTI에 맞는 직업 추천 웹앱 🎉")  # 여기에 문자열 끝에 작은따옴표 추가
+    st.markdown("👋 안녕하세요! 당신의 MBTI를 입력하면 어울리는 직업을 추천해 드려요! 🚀")
+    
+    # MBTI 입력 선택
+    mbti_type = st.selectbox(
+        "당신의 MBTI 유형을 선택하세요:",
+        ["ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP",
+         "ESTP", "ESFP", "ENFP", "ENTP", "ESTJ", "ESFJ", "ENFJ", "ENTJ"]
+    )
+
+    # 직업 추천
+    st.subheader("👨‍💼 추천 직업:")
+    job = get_job_recommendation(mbti_type)
+    st.markdown(f"**{job}**")
+    
+    # 풍선 효과 (스트림릿 내장 함수 사용)
+    st.balloons()  # 스트림릿 내장 풍선 효과
+
+    # 추가적인 장식
+    st.markdown("🎉✨ 즐거운 하루 되세요! ✨🎉")
+
+if __name__ == "__main__":
+    main()
