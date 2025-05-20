@@ -1,6 +1,5 @@
 import streamlit as st
 import random
-from streamlit_fx import fx  # 풍선효과 라이브러리
 
 # MBTI에 어울리는 직업 목록
 mbti_jobs = {
@@ -19,35 +18,4 @@ mbti_jobs = {
     "ESTJ": "💼 관리자, 기업 리더, 경찰",
     "ESFJ": "👩‍⚕️ 의료 전문가, 판매원, 코디네이터",
     "ENFJ": "💬 상담사, HR 전문가, 교육자",
-    "ENTJ": "👔 CEO, 전략가, 변호사",
-}
-
-# 직업 추천 함수
-def get_job_recommendation(mbti_type):
-    return mbti_jobs.get(mbti_type, "🌟 MBTI를 다시 선택해주세요!")
-
-# 스트림릿 앱 인터페이스 만들기
-def main():
-    st.title("🔮 MBTI에 맞는 직업 추천 웹앱 🎉")
-    st.markdown("👋 안녕하세요! 당신의 MBTI를 입력하면 어울리는 직업을 추천해 드려요! 🚀")
-    
-    # MBTI 입력 선택
-    mbti_type = st.selectbox(
-        "당신의 MBTI 유형을 선택하세요:",
-        ["ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP",
-         "ESTP", "ESFP", "ENFP", "ENTP", "ESTJ", "ESFJ", "ENFJ", "ENTJ"]
-    )
-
-    # 직업 추천
-    st.subheader("👨‍💼 추천 직업:")
-    job = get_job_recommendation(mbti_type)
-    st.markdown(f"**{job}**")
-    
-    # 풍선 효과 적용
-    fx.sticker("🎈", delay=100, duration=2000)  # 100ms 후 2초 동안 풍선 효과
-
-    # 추가적인 장식
-    st.markdown("🎉✨ 즐거운 하루 되세요! ✨🎉")
-
-if __name__ == "__main__":
-    main()
+    "ENTJ": "👔 CEO, 전략가, 변호사
